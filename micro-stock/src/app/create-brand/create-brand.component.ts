@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api/api.service';
 
 @Component({
   selector: 'app-create-brand',
@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './create-brand.component.scss'
 })
 export class CreateBrandComponent {
+  // constructor(private apiService: ApiService) {}
   onSubmit(form: any) {
     if (form.valid) {
       const brandData = form.value;
@@ -17,6 +18,7 @@ export class CreateBrandComponent {
       alert(`Brand "${brandData.name}" created successfully!`);
       form.reset();
       console.log('salero');
+      // const apiResponse=this.apiService.getItems();
     }
   }
 }

@@ -1,4 +1,24 @@
 <div>
   <app-create-brand></app-create-brand>
-
+  <body>
+    <div class="form-group">
+        <label for="stock-url">stock url</label>
+        <input type="text" id="stock-url" name="stock-url" placeholder="Enter the stock url" required>
+    </div>
+  <div class="container">
+    <h1>Create a Brand</h1>
+    <form id="brand-form">
+      <div class="form-group">
+        <label for="brand-name">Brand Name</label>
+        <input type="text" id="brand-name" name="brand-name" placeholder="Enter the brand name" required>
+      </div>
+      <div class="form-group">
+        <label for="brand-description">Brand Description</label>
+        <textarea id="brand-description" name="brand-description" rows="4" placeholder="Enter the brand description" required></textarea>
+      </div>
+      <button type="submit" class="btn">Create Brand</button>
+    </form>
+  </div>
+  <button id="testButton" (click)="createBrand()">salero</button>
+</body>
 </div>

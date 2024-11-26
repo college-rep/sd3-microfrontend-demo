@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <h2>Create Brand</h2>
+    <form #brandForm="ngForm" (ngSubmit)="onSubmit(brandForm)">
+      <div class="mb-3">
+        <label for="name" class="form-label">Brand Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          name="name"
+          ngModel
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea
+          id="description"
+          class="form-control"
+          name="description"
+          ngModel
+          rows="3"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="brandForm.invalid">
+        Create Brand
+      </button>
+    </form>
+  </div>
+  

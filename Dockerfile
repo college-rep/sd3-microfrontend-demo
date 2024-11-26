@@ -1,20 +1,11 @@
-# Use an official Node.js runtime as a parent image
-FROM node:16
+# Step 1: Use the official Nginx image from Docker Hub
+FROM nginx:alpine
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+# Copy the project files into the container
+COPY . ./usr/share/nginx/html
 
-# Copy the package.json and package-lock.json files
-COPY package*.json ./
+# Step 3: Expose port 80 (default port for HTTP)
+EXPOSE 80
 
-# Install the dependencies
-RUN npm install
-
-# Copy the rest of your application files
-COPY . .
-
-# Expose port 8080 to the outside world
-EXPOSE 8080
-
-# Command to run your app
-CMD [ "npm", "start" ]
+# Step 4: Start the Nginx server (this is the default command for the Nginx image)
+CMD ["nginx", "-g", "daemon off;"]

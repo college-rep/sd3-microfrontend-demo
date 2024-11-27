@@ -1,24 +1,27 @@
 <div>
-  <app-create-brand></app-create-brand>
+  <!-- <app-create-brand></app-create-brand> -->
   <body>
-    <div class="form-group">
-        <label for="stock-url">stock url</label>
-        <input type="text" id="stock-url" name="stock-url" placeholder="Enter the stock url" required>
-    </div>
   <div class="container">
+    <label for="stock-url">stock url</label>
+    <input id="stockUrl" type="text" [(ngModel)]="apiUrl">
     <h1>Create a Brand</h1>
     <form id="brand-form">
       <div class="form-group">
         <label for="brand-name">Brand Name</label>
-        <input type="text" id="brand-name" name="brand-name" placeholder="Enter the brand name" required>
+        <input type="text" id="brand-name" name="brand-name" [(ngModel)]="brandName" placeholder="Enter the brand name" required>
       </div>
       <div class="form-group">
         <label for="brand-description">Brand Description</label>
-        <textarea id="brand-description" name="brand-description" rows="4" placeholder="Enter the brand description" required></textarea>
+        <textarea id="brand-description" name="brand-description" [(ngModel)]="brandDescription" rows="4" placeholder="Enter the brand description" required></textarea>
       </div>
-      <button type="submit" class="btn">Create Brand</button>
+      <button type="submit" class="btn" (click)="createBrand()">Create Brand</button>
     </form>
+    <br>
+    
+    <div>
+      <h3>JSON Response</h3>
+      <pre>{{ jsonResponse | json  }}</pre>
+    </div>
   </div>
-  <button id="testButton" (click)="createBrand()">salero</button>
 </body>
 </div>

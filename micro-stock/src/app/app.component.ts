@@ -1,43 +1,54 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CreateBrandComponent } from './create-brand/create-brand.component';
-import { HttpClient } from '@angular/common/http';
 import { ApiService } from './api/api.service';
-import { provideHttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+//json pipe
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CreateBrandComponent],
+  imports: [RouterOutlet,CreateBrandComponent,FormsModule,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   providers:[ApiService]
 })
 export class AppComponent {
   title = 'micro-stock';
+  apiUrl:string='';
+  brandName:string='';
+  brandDescription:string='';
+  jsonResponse:string="response: here, you will see the response";
+
   constructor(private api: ApiService) {}
-  createBrand(){
-    console.log('salero');
-    // let re=this.api.get('localhost:8090/category/test');
-    // console.log(re.data);
-    this.api.get('https://httpbin.org/get').subscribe(
-      (data) => {
-        // Handle successful response
-        // this.posts = data;  // Store the data in the component's 'posts' property
-        console.log(data)
+  async createBrand(){
+    console.log('trying to call');
+    const response= this.api.post(this.apiUrl+'brand/',{
+      "name": this.brandName,
+      "description":this.brandDescription
+    }).subscribe({
+      next: (response) => {
+        console.log('Response:', response);
+        this.jsonResponse=response;
       },
-      (error) => {
-        // Handle error response
-        console.error('Error fetching data', error);
-      }
-    );
+      error: (error) => console.error('Error:', error.data),
+    });
+    console.log(response)
   }
   async createBrand2(){
+    console.log('createBrand2: trying to call api');
     try{
-      let res=await this.api.get2('localhost:8090/category/test');
+      let res=await this.api.get2('http://localhost:8090/category/?id=1');
+      // console.log(res.data);
+      console.log('API Response:', res);
+      console.log(this.brandName);
+      console.log(this.brandDescription);
+      console.log(this.apiUrl);
     }catch(error){
       console.error('error javi:',error);
     }
-
+    console.log('createBrand2 end');
   }
 }

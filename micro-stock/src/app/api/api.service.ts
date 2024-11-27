@@ -17,8 +17,8 @@ export class ApiService {
 
   // Example: Post a new item
   // createItem(data: any): Observable<any> {
-  createItem(data: any): any {
-    return this.http.post(`${this.apiUrl}/posts`, data);
+  post(url:string,payload:any): Observable<any> {
+    return this.http.post(url, payload);
   }
   // get(url:string):Observable<any>{
   get(url:string):Observable<any>{
@@ -33,4 +33,5 @@ export class ApiService {
       throw error;
     }
   }
+
 }

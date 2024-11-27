@@ -17,9 +17,10 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'micro-stock';
-  apiUrl:string='';
+  apiUrl:string='http://localhost:8090/';
   brandName:string='';
   brandDescription:string='';
+  brandId:number=0;
   jsonResponse:string="response: here, you will see the response";
 
   constructor(private api: ApiService) {}
@@ -37,7 +38,7 @@ export class AppComponent {
     });
     console.log(response)
   }
-  async createBrand2(){
+  async getBrand(){
     console.log('createBrand2: trying to call api');
     try{
       let res=await this.api.get2('http://localhost:8090/category/?id=1');
@@ -46,6 +47,7 @@ export class AppComponent {
       console.log(this.brandName);
       console.log(this.brandDescription);
       console.log(this.apiUrl);
+      this.jsonResponse=res;
     }catch(error){
       console.error('error javi:',error);
     }

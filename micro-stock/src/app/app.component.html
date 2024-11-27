@@ -17,7 +17,9 @@
       <button type="submit" class="btn" (click)="createBrand()">Create Brand</button>
     </form>
     <br>
-    
+    <label for="stock-url">stock url</label>
+    <input id="stockUrl" type="number" [(ngModel)]="brandId">
+    <button class="btn" (click)="getBrand()">get brand</button>
     <div>
       <h3>JSON Response</h3>
       <pre>{{ jsonResponse | json  }}</pre>

@@ -1,0 +1,25 @@
+
+##module federation app
+
+npx create-mf-app
+y
+
+demo1
+Application
+
+########
+Pick the name of your app: demo1
+? Project Type: Application
+? Port number: 4001
+? Framework: react
+? Language: typescript
+? CSS: CSS
+? Bundler: Webpack
+
+#########
+Next steps:
+
+▶️ cd demo1
+▶️ npm install
+▶️ npm start
+#######################################################

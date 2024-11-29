@@ -1,7 +1,17 @@
+------------------------------------------------------------
+---------------Setup the Monorepo---------------------------
+------------------------------------------------------------
+
+####Using Nx simplifies workspace and dependency 
+####management for microfrontends.
+####CREATE nx work space
+npx create-nx-workspace@latest microfrontend
+
 npx create-nx-workspace@latest microfrontend
 Need to install the following packages:
 create-nx-workspace@20.1.4
 Ok to proceed? (y) y
+
 
  NX   Let's create a new workspace [https://nx.dev/getting-started/intro]
 
@@ -20,6 +30,19 @@ Expo          [ https://expo.io/         ]
 √ Which CI provider would you like to use? · skip
 √ Would you like remote caching to make your build faster? · skip
 
-
 nx g @nrwl/react:application host-app --style=css
 nx g @nrwl/react:application remote-app --style=css
+
+
+------------------------------------------------------------
+---------------Setup the Monorepo---------------------------
+------------------------------------------------------------
+
+####
+
+####
+####
+####
+####
+####
+####

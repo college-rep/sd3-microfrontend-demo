@@ -1,0 +1,41 @@
+
+########################################################
+####create module federeation app
+npx create-mf-app
+? Pick the name of your app: home
+? Project Type: Application
+? Port number: 3000
+? Framework: (Use arrow keys)
+  lit-html 
+  preact
+? Framework: react
+? Language: javascript
+? CSS: CSS
+? Bundler: Webpack
+Your 'home' project is ready to go.
+
+Next steps:
+
+▶️ cd home
+▶️ npm install
+▶️ npm start
+
+########################################################
+########################################################
+########################################################
+npx create-mf-app home
+? Pick the name of your app: pdp
+? Project Type: Application
+? Port number: 3001
+? Framework: react
+? Language: javascript
+? CSS: CSS
+? Bundler: Webpack
+Your 'pdp' project is ready to go.
+
+Next steps:
+
+▶️ cd pdp
+▶️ npm install
+▶️ npm start
+

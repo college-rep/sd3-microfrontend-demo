@@ -1,5 +1,0 @@
-
-npm install -g nx
-npm install @nrwl/react
-
-

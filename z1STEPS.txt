@@ -1,7 +1,0 @@
-
-
-ng new host-app --routing --style=scss
-cd host-app
-
-
-npm install @angular-architects/module-federation --save-dev

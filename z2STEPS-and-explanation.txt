@@ -58,6 +58,8 @@ ng new microfrontend-app --routing --style=scss
 cd microfrontend-app
 npm install @angular-architects/module-federation --save-dev
 
+
+##instead of "builder": "@angular-devkit/build-angular:application",
 ------angular.json
 "builder": "@angular-devkit/build-angular:application",
 "options": {

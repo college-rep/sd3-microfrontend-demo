@@ -21,5 +21,24 @@ Expo          [ https://expo.io/         ]
 √ Would you like remote caching to make your build faster? · skip
 
 
-nx g @nrwl/react:application host-app --style=css
-nx g @nrwl/react:application remote-app --style=css
+cd microfrontend
+
+nx g @nrwl/vite:application host-app --style=css
+nx g @nrwl/vite:application remote-app --style=css
+
+
+√ Would you like to add React Router to this application? (y/N) · true
+√ Which E2E test runner would you like to use? · none
+√ Which bundler do you want to use to build the application? · vite
+
+
+npm install @originjs/vite-plugin-federation
+
+cd microfrontend\apps\microfrontend
+
+---------------------------
+cd microfrontend
+nx serve remote-app
+
+
+

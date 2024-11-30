@@ -30,19 +30,24 @@ Expo          [ https://expo.io/         ]
 √ Which CI provider would you like to use? · skip
 √ Would you like remote caching to make your build faster? · skip
 
-nx g @nrwl/react:application host-app --style=css
-nx g @nrwl/react:application remote-app --style=css
+cd microfrontend
+nx g @nrwl/vite:application host-app --style=css
+nx g @nrwl/vite:application remote-app --style=css
+
 
 
 ------------------------------------------------------------
----------------Setup the Monorepo---------------------------
+---------------3-CONFIGURE MODULE FEDERATION----------------
 ------------------------------------------------------------
+npm install @originjs/vite-plugin-federation
 
+cd microfrontend\apps\microfrontend
+####
+####
+####
 ####
 
-####
-####
-####
-####
-####
-####
+
+------------------------------------------------------------
+---------------3-CONFIGURE MODULE FEDERATION----------------
+------------------------------------------------------------
